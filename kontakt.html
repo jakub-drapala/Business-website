@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Skontaktuj się z J-SOFT — bezpłatna konsultacja IT. Automatyzacja, AI, aplikacje, integracje. Dębica, Podkarpackie, cała Polska zdalnie.">
+<meta property="og:title" content="Kontakt · J-SOFT Jakub Drapała">
+<meta property="og:description" content="Bezpłatna konsultacja IT dla Twojej firmy. Automatyzacja, AI, aplikacje, integracje.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pl_PL">
+<title>Kontakt · Bezpłatna Konsultacja IT | J-SOFT Dębica</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>emailjs.init('ZOBwl7GMNRPwk_VRu');</script>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">J-SOFT<span> Jakub Drapała</span></a>
+  <div class="nav-links">
+    <a href="uslugi.html">Usługi</a>
+    <a href="doswiadczenie.html">Doświadczenie</a>
+    <a href="realizacje.html">Realizacje</a>
+    <a href="kontakt.html" class="active">Kontakt</a>
+  </div>
+  <a href="kontakt.html" class="nav-cta">Konsultacja</a>
+  <button class="hamburger" onclick="document.querySelector('nav').classList.toggle('nav-open')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="page-hero">
+  <div class="section-eyebrow">Kontakt</div>
+  <h1>Porozmawiajmy<br>o <em>Twoim projekcie</em></h1>
+  <p class="page-hero-desc">Pierwsza konsultacja jest bezpłatna i bez zobowiązań. Napisz, o czym chcesz porozmawiać — odezwę się w ciągu 24 godzin.</p>
+</div>
+
+<div class="divider"></div>
+
+<div class="page-content">
+  <div class="contact-grid">
+    <div class="contact-info">
+      <h2>Jak mogę pomóc?</h2>
+      <p>Opowiedz mi krótko o swoim problemie lub pomyśle. Nie musisz znać się na technologii — od tego jestem ja. Powiem Ci szczerze, czy mogę pomóc i ile to będzie kosztować.</p>
+
+      <div class="contact-detail">
+        <div class="contact-detail-label">E-mail</div>
+        <div class="contact-detail-value"><a href="mailto:jakubdrapala@gmail.com">jakubdrapala@gmail.com</a></div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-detail-label">Telefon</div>
+        <div class="contact-detail-value"><a href="tel:+48881087928">+48 881 087 928</a></div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-detail-label">Lokalizacja</div>
+        <div class="contact-detail-value">Polska · Dębica · praca zdalna</div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-detail-label">Czas odpowiedzi</div>
+        <div class="contact-detail-value">Do 24 godzin w dni robocze</div>
+      </div>
+    </div>
+
+    <form class="contact-form" id="contact-form">
+      <div class="form-group">
+        <label for="name">Imię i nazwisko</label>
+        <input type="text" id="name" name="name" placeholder="Jan Kowalski" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Adres e-mail</label>
+        <input type="email" id="email" name="email" placeholder="jan@firma.pl" required>
+      </div>
+      <div class="form-group">
+        <label for="subject">Temat</label>
+        <input type="text" id="subject" name="subject" placeholder="Np. automatyzacja raportów">
+      </div>
+      <div class="form-group">
+        <label for="message">Wiadomość</label>
+        <textarea id="message" name="message" placeholder="Opisz krótko, z czym mogę Ci pomóc..." required></textarea>
+      </div>
+      <button type="submit" id="submit-btn" class="btn-gold" style="border: none; font-family: 'DM Sans', sans-serif; cursor: pointer; text-align: center;">Wyślij wiadomość →</button>
+    </form>
+    <script>
+      document.getElementById('contact-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const btn = document.getElementById('submit-btn');
+        btn.textContent = 'Wysyłanie...';
+        btn.disabled = true;
+        emailjs.sendForm('service_3ae2jx4', 'template_tkwp64l', this)
+          .then(function() {
+            btn.textContent = 'Wysłano! ✓';
+          }, function(error) {
+            btn.textContent = 'Błąd — spróbuj ponownie';
+            btn.disabled = false;
+            console.error('EmailJS error:', error);
+          });
+      });
+    </script>
+  </div>
+</div>
+
+<footer>
+  <a href="index.html" class="footer-logo">J-SOFT<span> Jakub Drapała</span></a>
+  <p>© 2026 · Usługi IT dla firm · Automatyzacja · AI · Aplikacje · Integracje</p>
+  <p>Dębica · Podkarpackie · cała Polska zdalnie</p>
+</footer>
+
+</body>
+</html>
