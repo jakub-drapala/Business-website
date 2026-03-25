@@ -315,6 +315,42 @@ footer p:last-child { width: 100%; text-align: right; }
   transform: translateY(-50%);
 }
 
+/* HERO BAR */
+.hero-bar {
+  display: flex; gap: 32px; margin-top: 32px;
+  padding-top: 32px; border-top: 1px solid rgba(200,151,58,0.15);
+}
+.hero-bar-item {
+  color: rgba(255,255,255,0.45); font-size: 13px; font-weight: 300;
+  padding-left: 16px; border-left: 1px solid rgba(200,151,58,0.3);
+}
+
+/* PROCESS */
+.process-section { background: var(--white); padding: 100px 60px; }
+.process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.process-step { padding: 32px; background: var(--cream); }
+.process-num {
+  font-family: 'Playfair Display', serif; font-size: 48px;
+  color: var(--gold); opacity: 0.3; font-weight: 700; line-height: 1; margin-bottom: 16px;
+}
+.process-name { font-weight: 500; color: var(--navy); font-size: 16px; margin-bottom: 8px; }
+.process-desc { color: var(--muted); font-size: 14px; line-height: 1.7; font-weight: 300; }
+
+/* AUDIENCE */
+.audience-section { background: var(--cream); padding: 100px 60px; }
+.audience-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; max-width: 1000px; margin: 0 auto; }
+.audience-list { list-style: none; }
+.audience-list li {
+  padding: 16px 0; border-bottom: 1px solid var(--cream2);
+  color: var(--text); font-size: 15px; line-height: 1.7;
+  padding-left: 24px; position: relative;
+}
+.audience-list li::before {
+  content: ''; position: absolute; left: 0; top: 50%;
+  width: 8px; height: 8px; background: var(--gold); border-radius: 50%;
+  transform: translateY(-50%);
+}
+
 @media (max-width: 900px) {
   .hero { grid-template-columns: 1fr; }
   .hero-right { display: none; }
@@ -345,4 +381,8 @@ footer p:last-child { width: 100%; text-align: right; }
   .portfolio-grid { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; gap: 48px; }
   .svc-detail { grid-template-columns: 1fr; gap: 32px; }
+  .hero-bar { flex-direction: column; gap: 12px; }
+  .process-section, .audience-section { padding: 60px 24px; }
+  .process-grid { grid-template-columns: 1fr 1fr; }
+  .audience-grid { grid-template-columns: 1fr; gap: 32px; }
 }
