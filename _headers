@@ -13,8 +13,8 @@
 /sitemap.xml
   Content-Type: application/xml; charset=UTF-8
 
-/favicon.svg
-  Content-Type: image/svg+xml; charset=UTF-8
+/j-soft.jpg
+  Content-Type: image/jpeg
 
 /og-image.svg
   Content-Type: image/svg+xml; charset=UTF-8
