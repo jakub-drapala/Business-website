@@ -111,7 +111,7 @@ h1 em { color: var(--gold-light); font-style: italic; }
 }
 .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
 .hero-right {
-  background: var(--navy2);
+  background: linear-gradient(135deg, #080f1e 0%, #0a1628 25%, #0f2040 50%, #152d55 75%, #1a3968 100%);
   display: flex; flex-direction: column; justify-content: center;
   padding: 120px 60px 80px;
   border-left: 1px solid rgba(200,151,58,0.12);
