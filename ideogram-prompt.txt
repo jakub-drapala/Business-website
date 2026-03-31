@@ -1,0 +1,72 @@
+Minimalist wordmark logo "J-SOFT" for an IT automation company. The letter "J" is uniquely designed — its tail
+  curves and splits into three small dots connected by thin lines, resembling a node graph or process flow. The rest of
+  the letters "SOFT" are in clean modern sans-serif. All text in white, only the letter "J" in warm gold #c8973a.
+  Background: dark navy gradient from #0a1628 to #162d58. Flat, professional, no icons, no separate symbols — everything
+   integrated into the typography. No robot, no gear, no shield.
+
+
+  ---
+  300x250 — Medium Rectangle
+
+  Professional digital advertising banner, 300x250 pixels, dark navy gradient background (#0a1628 to #152d55). Centered
+  golden robot mascot icon in muted gold tones (#c8973a, #e8be70) with circuit-style legs, small and elegant. Bold white
+   heading text "Automatyzacja, AI i aplikacje dla firm" below the robot. Smaller subtext "Mniej ręcznej pracy. Więcej
+  czasu na rozwój." in soft muted white. Small gold rectangular button "Bezpłatna konsultacja" at the bottom. Subtle
+  decorative thin gold horizontal line separating logo from text. Very subtle geometric grid pattern overlay in the
+  background at low opacity. Clean, minimal, premium corporate feel. Sharp edges, no rounded corners on the banner
+  itself.
+
+  336x280 — Large Rectangle
+
+  Professional digital advertising banner, 336x280 pixels, dark navy radial gradient background (#0a1628 center glow
+  #152d55). Centered small golden robot mascot icon with antenna, square body, circuit legs in warm gold tones (#c8973a,
+   #e8be70). Main heading "Automatyzacja, AI i aplikacje dla firm" in white bold serif font below the robot. Secondary
+  text "Mniej ręcznej pracy. Więcej czasu na rozwój." in smaller muted white sans-serif. Gold call-to-action button
+  "Bezpłatna konsultacja" at bottom. Thin gold decorative line between heading and subtext. Faint abstract circuit board
+   traces as background decoration at very low opacity. Premium, corporate, clean Polish IT services ad. No rounded
+  corners.
+
+  728x90 — Leaderboard
+
+  Professional wide horizontal advertising banner, 728x90 pixels, dark navy gradient background (#0a1628 to #0f2040).
+  Layout left to right: small golden robot mascot icon with antenna and circuit legs in gold (#c8973a), thin vertical
+  gold separator line, bold white serif heading "Automatyzacja, AI i aplikacje dla firm", smaller muted text below
+  "Mniej ręcznej pracy. Więcej czasu na rozwój.", gold button "Bezpłatna konsultacja →" on the right side. Small white
+  text "j-soft" next to the robot. Subtle glowing dot decorations in gold at very low opacity in background. Clean
+  horizontal composition, premium corporate IT services banner. Sharp edges.
+
+  160x600 — Wide Skyscraper
+
+  Professional tall vertical advertising banner, 160x600 pixels, dark navy gradient background (#0a1628 to #152d55) with
+   subtle radial glow. Top: small golden robot mascot icon with antenna, circuit legs in warm gold (#c8973a, #e8be70),
+  white text "j-soft" below it. Small gold-bordered tag "Usługi IT". Middle: bold white serif heading "Automatyzacja, AI
+   i aplikacje dla firm" stacked vertically. Below: thin gold horizontal decorative line, then muted white smaller text
+  "Mniej ręcznej pracy. Więcej czasu na rozwój." Bottom: gold button "Konsultacja →", tiny muted text "j-soft.me". Faint
+   vertical circuit trace decorations at very low opacity. Premium, minimal, corporate. No rounded corners.
+
+  300x600 — Half Page
+
+  Professional tall advertising banner, 300x600 pixels, dark navy radial gradient background (#0a1628 to #152d55 with
+  subtle center glow). Top section: golden robot mascot icon with antenna, square body, circuit-style legs in warm gold
+  tones (#c8973a, #e8be70), white text "j-soft" below. Gold-bordered small tag "Automatyzacja · AI · Aplikacje". Main
+  heading in large white bold serif font "Automatyzacja, AI i aplikacje dla firm". Secondary text "Mniej ręcznej pracy.
+  Więcej czasu na rozwój." in muted white. Thin gold decorative line. Four feature bullet points with small gold dots:
+  "Automatyzacja procesów", "Aplikacje webowe", "Integracje systemów", "Narzędzia AI". Gold call-to-action button
+  "Bezpłatna konsultacja →" near bottom. Tiny footer "j-soft.me · Jakub Drapała". Very subtle abstract geometric
+  decorations, faint hexagonal grid pattern at low opacity in background. Premium, clean, corporate Polish IT services
+  ad.
+
+  320x50 — Mobile Banner
+
+  Professional small horizontal mobile advertising banner, 320x50 pixels, dark navy gradient background (#0a1628 to
+  #0f2040). Left: tiny golden robot mascot icon with white text "j-soft" next to it. Thin vertical gold separator.
+  Center: white bold text "Automatyzacja, AI i aplikacje dla firm" compact. Right: small gold button "Konsultacja". Very
+   minimal, clean, no background decorations, sharp corporate feel. Legible small text on dark background. No rounded
+  corners.
+
+  ---
+  Wskazówki do Ideogram:
+  - Ustaw aspect ratio odpowiedni do rozmiaru (np. 3:2.5 dla 300x250, 8:1 dla 728x90, itp.)
+  - Jeśli tekst się źle generuje za pierwszym razem, spróbuj z włączonym "Auto" lub "Typography" stylem
+  - Jeśli robot wychodzi inaczej niż w logo, dodaj na końcu promptu: robot mascot matching reference style, flat icon
+  design, no 3D rendering

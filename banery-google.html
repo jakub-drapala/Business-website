@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Banery Google Ads — J-SOFT</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  body {
+    background: #1a1a2e;
+    font-family: 'DM Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+    padding: 48px 24px;
+  }
+  .label {
+    color: #888;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: -36px;
+  }
+
+  /* ======================================
+     WSPÓLNE STYLE BANERÓW
+     ====================================== */
+  .banner {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    /* Gradient tła nawiązujący do j-soft-gradient.jpeg */
+    background:
+      radial-gradient(ellipse 120% 100% at 50% 40%, #152d55 0%, #0d1f3d 50%, #0a1628 100%);
+  }
+
+  /* Delikatna poświata w centrum (jak na grafice) */
+  .banner::before {
+    content: '';
+    position: absolute;
+    top: -30%; left: 10%;
+    width: 80%; height: 120%;
+    background: radial-gradient(ellipse at center, rgba(21,45,85,0.7) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  /* Subtelna ramka gold */
+  .banner::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 1px solid rgba(200,151,58,0.2);
+    pointer-events: none;
+  }
+
+  /* Wewnętrzna zawartość */
+  .banner-inner {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Logo / robot */
+  .banner-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+
+  /* Robot SVG icon */
+  .robot-icon {
+    fill: none;
+  }
+
+  /* Tekst logo */
+  .logo-text {
+    font-family: 'DM Sans', sans-serif;
+    color: #ffffff;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+
+  /* Headline */
+  .banner-headline {
+    font-family: 'Playfair Display', serif;
+    color: #ffffff;
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.3px;
+  }
+  .banner-headline em {
+    color: #e8be70;
+    font-style: italic;
+  }
+
+  /* Subline */
+  .banner-sub {
+    color: rgba(255,255,255,0.5);
+    font-weight: 300;
+    line-height: 1.5;
+  }
+
+  /* Tag - eyebrow */
+  .banner-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border: 1px solid rgba(200,151,58,0.35);
+    color: #c8973a;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 500;
+  }
+  .banner-tag::before {
+    content: '';
+    width: 5px; height: 5px;
+    background: #c8973a;
+    border-radius: 50%;
+  }
+
+  /* CTA button */
+  .banner-cta {
+    background: #c8973a;
+    color: #0a1628;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+    text-decoration: none;
+    display: inline-block;
+    white-space: nowrap;
+  }
+  .banner-cta:hover {
+    background: #e8be70;
+  }
+
+  /* Drobna linia dekoracyjna */
+  .gold-line {
+    background: linear-gradient(90deg, transparent 0%, #c8973a 30%, #e8be70 50%, #c8973a 70%, transparent 100%);
+  }
+
+  /* ======================================
+     300×250 — Medium Rectangle
+     ====================================== */
+  .banner-300x250 {
+    width: 300px; height: 250px;
+  }
+  .banner-300x250 .banner-inner {
+    padding: 24px 20px 20px;
+    justify-content: space-between;
+  }
+  .banner-300x250 .robot-icon { width: 36px; height: 36px; }
+  .banner-300x250 .logo-text { font-size: 14px; }
+  .banner-300x250 .banner-headline { font-size: 20px; margin-top: 8px; }
+  .banner-300x250 .banner-sub { font-size: 11px; margin-top: 4px; }
+  .banner-300x250 .banner-cta { font-size: 12px; padding: 9px 22px; margin-top: 8px; }
+  .banner-300x250 .gold-line { width: 60%; height: 1px; margin-top: 6px; }
+
+  /* ======================================
+     728×90 — Leaderboard
+     ====================================== */
+  .banner-728x90 {
+    width: 728px; height: 90px;
+  }
+  .banner-728x90 .banner-inner {
+    flex-direction: row;
+    padding: 0 28px;
+    gap: 24px;
+    text-align: left;
+  }
+  .banner-728x90 .banner-logo {
+    flex-direction: row;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+  .banner-728x90 .robot-icon { width: 32px; height: 32px; }
+  .banner-728x90 .logo-text { font-size: 16px; }
+  .banner-728x90 .banner-mid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    min-width: 0;
+  }
+  .banner-728x90 .banner-headline { font-size: 18px; }
+  .banner-728x90 .banner-sub { font-size: 11px; margin-top: 2px; }
+  .banner-728x90 .banner-cta { font-size: 12px; padding: 10px 24px; flex-shrink: 0; }
+  .banner-728x90 .gold-sep {
+    width: 1px; height: 40px;
+    background: rgba(200,151,58,0.3);
+    flex-shrink: 0;
+  }
+
+  /* ======================================
+     160×600 — Wide Skyscraper
+     ====================================== */
+  .banner-160x600 {
+    width: 160px; height: 600px;
+  }
+  .banner-160x600 .banner-inner {
+    padding: 28px 16px 24px;
+    justify-content: space-between;
+  }
+  .banner-160x600 .robot-icon { width: 40px; height: 40px; }
+  .banner-160x600 .logo-text { font-size: 15px; margin-top: 2px; }
+  .banner-160x600 .banner-tag { font-size: 7px; padding: 4px 8px; letter-spacing: 1px; margin-top: 16px; }
+  .banner-160x600 .banner-headline { font-size: 18px; margin-top: 12px; }
+  .banner-160x600 .banner-sub { font-size: 10px; margin-top: 8px; line-height: 1.6; }
+  .banner-160x600 .banner-cta { font-size: 11px; padding: 10px 16px; width: 100%; text-align: center; }
+  .banner-160x600 .gold-line { width: 50%; height: 1px; margin-top: 12px; }
+  .banner-160x600 .banner-bottom { margin-top: auto; width: 100%; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+
+  /* ======================================
+     300×600 — Half Page
+     ====================================== */
+  .banner-300x600 {
+    width: 300px; height: 600px;
+  }
+  .banner-300x600 .banner-inner {
+    padding: 36px 24px 28px;
+    justify-content: space-between;
+  }
+  .banner-300x600 .robot-icon { width: 48px; height: 48px; }
+  .banner-300x600 .logo-text { font-size: 18px; margin-top: 4px; }
+  .banner-300x600 .banner-tag { font-size: 8px; padding: 5px 12px; margin-top: 20px; }
+  .banner-300x600 .banner-headline { font-size: 26px; margin-top: 16px; }
+  .banner-300x600 .banner-sub { font-size: 12px; margin-top: 10px; max-width: 240px; }
+  .banner-300x600 .gold-line { width: 60%; height: 1px; margin-top: 16px; }
+  .banner-300x600 .banner-features {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 16px;
+    width: 100%;
+  }
+  .banner-300x600 .banner-feature {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: rgba(255,255,255,0.6);
+    font-size: 11px;
+    font-weight: 300;
+    text-align: left;
+  }
+  .banner-300x600 .feature-dot {
+    width: 5px; height: 5px;
+    background: #c8973a;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .banner-300x600 .banner-cta { font-size: 13px; padding: 12px 28px; margin-top: auto; }
+  .banner-300x600 .banner-footer {
+    color: rgba(255,255,255,0.25);
+    font-size: 9px;
+    margin-top: 12px;
+    font-weight: 300;
+  }
+
+  /* ======================================
+     320×50 — Mobile Banner
+     ====================================== */
+  .banner-320x50 {
+    width: 320px; height: 50px;
+  }
+  .banner-320x50 .banner-inner {
+    flex-direction: row;
+    padding: 0 12px;
+    gap: 10px;
+    text-align: left;
+  }
+  .banner-320x50 .banner-logo {
+    flex-direction: row;
+    gap: 6px;
+    flex-shrink: 0;
+  }
+  .banner-320x50 .robot-icon { width: 20px; height: 20px; }
+  .banner-320x50 .logo-text { font-size: 11px; }
+  .banner-320x50 .banner-headline { font-size: 11px; flex: 1; }
+  .banner-320x50 .banner-cta { font-size: 9px; padding: 6px 12px; flex-shrink: 0; }
+  .banner-320x50 .gold-sep {
+    width: 1px; height: 24px;
+    background: rgba(200,151,58,0.3);
+    flex-shrink: 0;
+  }
+
+  /* ======================================
+     336×280 — Large Rectangle
+     ====================================== */
+  .banner-336x280 {
+    width: 336px; height: 280px;
+  }
+  .banner-336x280 .banner-inner {
+    padding: 28px 24px 22px;
+    justify-content: space-between;
+  }
+  .banner-336x280 .robot-icon { width: 38px; height: 38px; }
+  .banner-336x280 .logo-text { font-size: 15px; }
+  .banner-336x280 .banner-headline { font-size: 22px; margin-top: 10px; }
+  .banner-336x280 .banner-sub { font-size: 12px; margin-top: 6px; }
+  .banner-336x280 .banner-cta { font-size: 12px; padding: 10px 24px; margin-top: 10px; }
+  .banner-336x280 .gold-line { width: 60%; height: 1px; margin-top: 8px; }
+</style>
+</head>
+<body>
+
+<!-- Robot SVG inline definition -->
+<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden;">
+  <defs>
+    <linearGradient id="robotGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e8be70"/>
+      <stop offset="50%" stop-color="#c8973a"/>
+      <stop offset="100%" stop-color="#a07828"/>
+    </linearGradient>
+    <symbol id="robot" viewBox="0 0 64 72">
+      <!-- Antenna -->
+      <circle cx="32" cy="6" r="4" fill="url(#robotGold)" opacity="0.8"/>
+      <rect x="30" y="9" width="4" height="8" rx="2" fill="url(#robotGold)" opacity="0.7"/>
+      <!-- Head -->
+      <rect x="20" y="16" width="24" height="16" rx="4" fill="url(#robotGold)" opacity="0.85"/>
+      <!-- Eyes -->
+      <circle cx="27" cy="24" r="2.5" fill="#0a1628"/>
+      <circle cx="37" cy="24" r="2.5" fill="#0a1628"/>
+      <!-- Body -->
+      <rect x="16" y="34" width="32" height="18" rx="3" fill="url(#robotGold)" opacity="0.75"/>
+      <!-- Body stripes -->
+      <rect x="16" y="38" width="32" height="2" fill="#0a1628" opacity="0.15"/>
+      <rect x="16" y="44" width="32" height="2" fill="#0a1628" opacity="0.15"/>
+      <!-- Arms -->
+      <rect x="8" y="36" width="7" height="12" rx="3" fill="url(#robotGold)" opacity="0.65"/>
+      <rect x="49" y="36" width="7" height="12" rx="3" fill="url(#robotGold)" opacity="0.65"/>
+      <!-- Legs / circuits -->
+      <rect x="22" y="52" width="3" height="12" rx="1.5" fill="url(#robotGold)" opacity="0.5"/>
+      <rect x="30.5" y="52" width="3" height="14" rx="1.5" fill="url(#robotGold)" opacity="0.5"/>
+      <rect x="39" y="52" width="3" height="12" rx="1.5" fill="url(#robotGold)" opacity="0.5"/>
+      <!-- Circuit ends -->
+      <circle cx="23.5" cy="64" r="2" fill="url(#robotGold)" opacity="0.45"/>
+      <circle cx="32" cy="66" r="2" fill="url(#robotGold)" opacity="0.45"/>
+      <circle cx="40.5" cy="64" r="2" fill="url(#robotGold)" opacity="0.45"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ==========================================
+     300×250 — Medium Rectangle
+     ========================================== -->
+<div class="label">300 &times; 250 — Medium Rectangle</div>
+<div class="banner banner-300x250">
+  <div class="banner-inner">
+    <div class="banner-logo">
+      <svg class="robot-icon"><use href="#robot"/></svg>
+      <div class="logo-text">j-soft</div>
+    </div>
+    <div class="gold-line"></div>
+    <div class="banner-headline">Mniej ręcznej pracy.<br>Więcej czasu na <em>rozwój.</em></div>
+    <div class="banner-sub">Automatyzacja, AI i aplikacje dla firm</div>
+    <div class="banner-cta">Bezpłatna konsultacja</div>
+  </div>
+</div>
+
+<!-- ==========================================
+     336×280 — Large Rectangle
+     ========================================== -->
+<div class="label">336 &times; 280 — Large Rectangle</div>
+<div class="banner banner-336x280">
+  <div class="banner-inner">
+    <div class="banner-logo">
+      <svg class="robot-icon"><use href="#robot"/></svg>
+      <div class="logo-text">j-soft</div>
+    </div>
+    <div class="gold-line"></div>
+    <div class="banner-headline">Automatyzacja procesów<br>i narzędzia <em>AI dla firm</em></div>
+    <div class="banner-sub">Oszczędź czas — zautomatyzuj powtarzalną pracę</div>
+    <div class="banner-cta">Bezpłatna konsultacja</div>
+  </div>
+</div>
+
+<!-- ==========================================
+     728×90 — Leaderboard
+     ========================================== -->
+<div class="label">728 &times; 90 — Leaderboard</div>
+<div class="banner banner-728x90">
+  <div class="banner-inner">
+    <div class="banner-logo">
+      <svg class="robot-icon"><use href="#robot"/></svg>
+      <div class="logo-text">j-soft</div>
+    </div>
+    <div class="gold-sep"></div>
+    <div class="banner-mid">
+      <div class="banner-headline">Mniej ręcznej pracy. Więcej czasu na <em>rozwój firmy.</em></div>
+      <div class="banner-sub">Automatyzacja procesów · AI · Aplikacje · Integracje · KSeF</div>
+    </div>
+    <div class="banner-cta">Bezpłatna konsultacja &rarr;</div>
+  </div>
+</div>
+
+<!-- ==========================================
+     160×600 — Wide Skyscraper
+     ========================================== -->
+<div class="label">160 &times; 600 — Wide Skyscraper</div>
+<div class="banner banner-160x600">
+  <div class="banner-inner">
+    <div class="banner-logo">
+      <svg class="robot-icon"><use href="#robot"/></svg>
+      <div class="logo-text">j-soft</div>
+    </div>
+    <div class="banner-tag">Usługi IT</div>
+    <div class="banner-headline">Mniej ręcznej pracy.<br>Więcej czasu na&nbsp;<em>rozwój.</em></div>
+    <div class="gold-line"></div>
+    <div class="banner-sub">Automatyzacja procesów, aplikacje, AI i integracje dla małych i średnich firm.</div>
+    <div class="banner-bottom">
+      <div class="banner-cta">Konsultacja &rarr;</div>
+      <div style="color: rgba(255,255,255,0.2); font-size: 8px; font-weight: 300;">j-soft.me</div>
+    </div>
+  </div>
+</div>
+
+<!-- ==========================================
+     300×600 — Half Page
+     ========================================== -->
+<div class="label">300 &times; 600 — Half Page</div>
+<div class="banner banner-300x600">
+  <div class="banner-inner">
+    <div class="banner-logo">
+      <svg class="robot-icon"><use href="#robot"/></svg>
+      <div class="logo-text">j-soft</div>
+    </div>
+    <div class="banner-tag">Automatyzacja &middot; AI &middot; Aplikacje</div>
+    <div class="banner-headline">Mniej ręcznej pracy.<br>Więcej czasu na<br><em>rozwój firmy.</em></div>
+    <div class="banner-sub">Pomagam firmom oszczędzać czas dzięki automatyzacji, aplikacjom i narzędziom AI.</div>
+    <div class="gold-line"></div>
+    <div class="banner-features">
+      <div class="banner-feature"><span class="feature-dot"></span>Automatyzacja procesów i raportów</div>
+      <div class="banner-feature"><span class="feature-dot"></span>Aplikacje webowe i mobilne</div>
+      <div class="banner-feature"><span class="feature-dot"></span>Integracje systemów i KSeF</div>
+      <div class="banner-feature"><span class="feature-dot"></span>Narzędzia AI dla firm</div>
+    </div>
+    <div class="banner-cta">Bezpłatna konsultacja &rarr;</div>
+    <div class="banner-footer">j-soft.me &middot; Jakub Drapała</div>
+  </div>
+</div>
+
+<!-- ==========================================
+     320×50 — Mobile Banner
+     ========================================== -->
+<div class="label">320 &times; 50 — Mobile Banner</div>
+<div class="banner banner-320x50">
+  <div class="banner-inner">
+    <div class="banner-logo">
+      <svg class="robot-icon"><use href="#robot"/></svg>
+      <div class="logo-text">j-soft</div>
+    </div>
+    <div class="gold-sep"></div>
+    <div class="banner-headline">Automatyzacja i <em>AI dla firm</em></div>
+    <div class="banner-cta">Konsultacja</div>
+  </div>
+</div>
+
+</body>
+</html>
