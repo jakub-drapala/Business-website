@@ -65,6 +65,33 @@ Minimalist wordmark logo "J-SOFT" for an IT automation company. The letter "J" i
   corners.
 
   ---
+  1200x630 — Open Graph / Google Cover
+
+  Professional Open Graph social media cover image, 1200x630 pixels, dark navy radial
+  gradient background (#0a1628 center to #152d55 edges).
+
+  Left side: golden robot mascot icon with small antenna, square body, circuit-style
+  legs in warm gold (#c8973a, #e8be70), flat icon design, no 3D rendering —
+  matching reference logo style. White wordmark text "j-soft" directly below the robot,
+  clean modern sans-serif font, same style as the reference logo.
+
+  Right side: large bold white serif heading "Automatyzacja, AI i aplikacje dla firm"
+  spanning two lines. Below it a thin horizontal gold decorative line (#c8973a).
+  Then smaller muted white text "Mniej ręcznej pracy. Więcej czasu na rozwój."
+  in clean sans-serif.
+
+  Bottom right corner: subtle muted text "j-soft.me" in small white sans-serif.
+
+  Very faint abstract circuit board traces or hexagonal grid pattern at 5% opacity
+  in the background. Clean, minimal, premium corporate Polish IT services brand.
+  Sharp edges, no rounded corners. High contrast, legible at thumbnail size.
+
+  Robot mascot matching reference style, flat icon design, no 3D rendering.
+
+  Wskazówki: styl Typography lub Design, aspect ratio 1.91:1.
+  Opcjonalnie dołącz j-soft-gradient.jpeg jako reference image (wpływ ~30-40%).
+
+  ---
   Wskazówki do Ideogram:
   - Ustaw aspect ratio odpowiedni do rozmiaru (np. 3:2.5 dla 300x250, 8:1 dla 728x90, itp.)
   - Jeśli tekst się źle generuje za pierwszym razem, spróbuj z włączonym "Auto" lub "Typography" stylem
