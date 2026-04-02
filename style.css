@@ -129,6 +129,23 @@ h1 em { color: var(--gold-light); font-style: italic; }
     rgba(200,151,58,0.04) 60px
   );
 }
+/* HERO ROBOT */
+.hero-robot {
+  position: relative; z-index: 2;
+  text-align: center;
+  margin-bottom: 32px;
+  animation: robot-float 4s ease-in-out infinite;
+}
+.hero-robot img {
+  width: 220px; height: 220px;
+  opacity: 0.8;
+  filter: drop-shadow(0 0 30px rgba(200,151,58,0.35)) drop-shadow(0 0 60px rgba(200,151,58,0.15));
+}
+@keyframes robot-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+
 .credentials { position: relative; z-index: 2; }
 .cred-title { color: var(--gold); font-size: 10px; letter-spacing: 3px; text-transform: uppercase; font-weight: 500; margin-bottom: 32px; }
 .cred-item {
