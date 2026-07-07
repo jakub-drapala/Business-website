@@ -67,7 +67,7 @@
     var target = parseInt(m[1], 10);
     var suffix = m[2];
     var t0 = null;
-    var DUR = 900;
+    var DUR = 600;
     function frame(ts) {
       if (t0 === null) t0 = ts;
       var t = Math.min((ts - t0) / DUR, 1);
