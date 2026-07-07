@@ -133,18 +133,6 @@
     </div>
   </div>
   <div class="hero-right">
-    <div class="hero-photo">
-      <div class="hero-photo-frame">
-        <picture>
-          <source srcset="jakub-drapala.webp" type="image/webp">
-          <img src="jakub-drapala.jpg" alt="Jakub Drapała — założyciel J-SOFT" width="240" height="300">
-        </picture>
-      </div>
-      <div class="hero-photo-caption">
-        <div class="hero-photo-name">Jakub Drapała</div>
-        <div class="hero-photo-role">Założyciel J-SOFT · Dębica</div>
-      </div>
-    </div>
     <div class="credentials">
       <div class="cred-title">Dlaczego ja</div>
       <div class="cred-item">
@@ -168,6 +156,119 @@
 </div>
 
 <div class="divider"></div>
+
+<div class="faq-section">
+  <div class="section-header">
+    <div>
+      <div class="section-eyebrow">FAQ</div>
+      <h2 class="section-title-serif">Pytania, które słyszę <em>najczęściej</em></h2>
+    </div>
+  </div>
+  <div class="faq-groups">
+
+    <div class="faq-group">
+      <h3 class="faq-group-title">AI po ludzku</h3>
+      <details class="faq-item">
+        <summary>Czym różni się ChatGPT od AI wdrożonego w firmie?</summary>
+        <div class="faq-answer"><p>ChatGPT to ogólny asystent — odpowiada na pytania, ale nie zna Twojej firmy i nie wykona pracy w Twoich systemach. AI wdrożone w firmie jest podłączone do Twoich danych i narzędzi — skrzynki, faktur, dokumentów — i wykonuje konkretne, powtarzalne zadania według ustalonych zasad. To różnica między rozmową a działaniem.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Do czego mała firma może realnie wykorzystać AI?</summary>
+        <div class="faq-answer"><p>Najczęściej tam, gdzie ktoś ręcznie czyta i przepisuje: odczytywanie zamówień z maili, wyciąganie danych ze skanów i PDF-ów, przygotowywanie szkiców dokumentów, odpowiedzi na powtarzalne zapytania klientów, streszczanie ofert i umów. Dobre wdrożenie zaczyna się od jednego wąskiego zadania, które zabiera najwięcej czasu — nie od „rewolucji AI”.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Czy AI może samo wystawiać faktury albo odpisywać klientom?</summary>
+        <div class="faq-answer"><p>Może — ale nie powinno robić tego bez nadzoru. Sprawdzony model to „człowiek w pętli”: AI czyta zamówienia i przygotowuje gotowe szkice faktur czy odpowiedzi, a Ty tylko przeglądasz listę i zatwierdzasz jednym kliknięciem. Jeden błędny NIP na fakturze to realny problem podatkowy, dlatego ostatnie słowo zawsze należy do człowieka.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Czy moje dane są bezpieczne, gdy firma korzysta z AI?</summary>
+        <div class="faq-answer"><p>To zależy od sposobu wdrożenia — i dlatego warto je zaplanować. Biznesowe usługi AI (w przeciwieństwie do darmowych czatów) dają umowy, które zakazują trenowania modeli na Twoich danych. Można też ograniczyć, co w ogóle trafia do AI: dane wrażliwe da się filtrować lub anonimizować, zanim opuszczą firmę.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Co to jest agent AI?</summary>
+        <div class="faq-answer"><p>Program, który nie tylko odpowiada na pytania, ale sam wykonuje wieloetapowe zadania: potrafi sprawdzić skrzynkę, odczytać załącznik, zajrzeć do systemu i przygotować dokument — krok po kroku, bez prowadzenia za rękę. Ty ustalasz zasady i granice, agent wykonuje pracę i pokazuje wynik do akceptacji.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Co to jest RAG i po co AI dostęp do moich dokumentów?</summary>
+        <div class="faq-answer"><p>RAG (Retrieval-Augmented Generation) to technika, w której AI przed udzieleniem odpowiedzi najpierw wyszukuje informacje w Twoich dokumentach — umowach, cennikach, procedurach — i odpowiada na ich podstawie, zamiast „z głowy”. Dzięki temu odpowiedzi dotyczą Twojej firmy, a nie ogólnej wiedzy z internetu, i można wskazać źródło każdej informacji. To podstawa np. firmowej bazy wiedzy dla pracowników.</p></div>
+      </details>
+    </div>
+
+    <div class="faq-group">
+      <h3 class="faq-group-title">Faktury i KSeF</h3>
+      <details class="faq-item">
+        <summary>Czym różni się faktura PDF od faktury XML?</summary>
+        <div class="faq-answer"><p>PDF to obraz faktury przeznaczony dla człowieka — komputer widzi w nim tylko „obrazek z tekstem” i żeby zaksięgować dane, ktoś musi je przepisać albo użyć zawodnego OCR. XML to faktura zapisana jako dane: każda pozycja, kwota i NIP ma swoje miejsce w strukturze, więc program księgowy odczyta ją bezbłędnie i automatycznie. Krótko: PDF czyta człowiek, XML czyta komputer.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Co to jest faktura ustrukturyzowana?</summary>
+        <div class="faq-answer"><p>To faktura w formacie XML zgodnym ze schematem Ministerstwa Finansów, wystawiona przez KSeF. „Ustrukturyzowana” znaczy tyle, że wszystkie dane — sprzedawca, nabywca, pozycje, stawki VAT — mają ściśle określone miejsca, dzięki czemu każdy system w Polsce odczyta ją tak samo. W obowiązkowym KSeF to ona jest „prawdziwą” fakturą, a PDF czy wydruk to tylko jej wizualizacja.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Skoro mam PDF-y, to po co mi KSeF?</summary>
+        <div class="faq-answer"><p>Bo KSeF nie jest kwestią wyboru — wystawianie faktur przez ten system jest już w Polsce obowiązkowe (dla największych firm od lutego 2026, dla pozostałych od kwietnia 2026). Faktury sprzedażowe wystawiasz w KSeF, a kosztowe odbierasz z KSeF. Ta zmiana ma też dobrą stronę: wszystkie faktury stają się danymi, które można automatycznie księgować, kontrolować i analizować.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Od czego zacząć przygotowania firmy do KSeF?</summary>
+        <div class="faq-answer"><p>Od trzech pytań: czym dziś wystawiasz faktury (i czy dostawca ma już moduł KSeF), jak odbierasz faktury kosztowe oraz kto w firmie ma mieć uprawnienia do KSeF. Potem porządkuje się obieg: nadanie uprawnień, próby w środowisku testowym KSeF, dopiero na końcu produkcja. Zwykle nie trzeba wymieniać systemu — trzeba go rozsądnie podłączyć i przetestować.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Co jeszcze mogą mi dać dane z KSeF poza wystawianiem faktur?</summary>
+        <div class="faq-answer"><p>Sporo, bo wszystkie faktury firmy w jednym miejscu i w formie danych to gotowy materiał do analizy: monitoring, które faktury są opłacone, a które po terminie; dashboard kosztów zamiast ręcznych zestawień w Excelu; historia cen od dostawców — łatwo sprawdzisz, czy nowa oferta nie jest zawyżona; pełna baza kontrahentów do wykorzystania np. w marketingu. Samo wystawianie faktur to obowiązek — te dane to okazja.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Czy KSeF sam wykryje błędy i nadużycia na fakturach?</summary>
+        <div class="faq-answer"><p>Nie — KSeF sprawdza tylko, czy faktura jest technicznie poprawna, a nie czy jest zasadna i uczciwa. Ale na danych z KSeF można zbudować własne kontrole: wykrywanie zdublowanych faktur, nietypowych kwot i podejrzanych zmian cen czy sprawdzanie rachunku na białej liście VAT przed płatnością. Więcej o tym piszę w artykule <a href="blog/ksef-faktury-kosztowe-kontrole-przed-platnoscia.html">o 5 kontrolach faktur kosztowych przed płatnością</a>.</p></div>
+      </details>
+    </div>
+
+    <div class="faq-group">
+      <h3 class="faq-group-title">Płatności i standardy bankowe</h3>
+      <details class="faq-item">
+        <summary>Co to jest MT940?</summary>
+        <div class="faq-answer"><p>To format elektronicznego wyciągu bankowego używany od dekad — plik tekstowy z listą operacji, który firmy importują do systemów księgowych i finansowych. Problem w tym, że MT940 jest mocno skrótowy: ma mało miejsca na szczegóły przelewu, a każdy bank wypełnia go trochę inaczej, więc automatyczne przetwarzanie bywa zawodne.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Co to jest ISO 20022?</summary>
+        <div class="faq-answer"><p>Międzynarodowy standard wymiany danych finansowych — wspólny „język”, w którym banki na całym świecie opisują przelewy, wyciągi i statusy płatności. Zamiast skrótowych pól tekstowych używa czytelnej struktury (XML), w której każda informacja — nadawca, odbiorca, tytuł, kwota — ma jednoznaczne miejsce. Przechodzi na niego cały świat płatności, ze SWIFT na czele, a sukcesywnie także polskie banki.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Na czym polega migracja z MT940 na CAMT?</summary>
+        <div class="faq-answer"><p>CAMT to rodzina komunikatów ISO 20022 zastępujących stare wyciągi: camt.053 to wyciąg dzienny (następca MT940), camt.052 — raport śróddzienny, a camt.054 — powiadomienia o uznaniach i obciążeniach. Migracja oznacza, że bank zaczyna udostępniać wyciągi w nowym formacie, a systemy firmy — księgowość, ERP, controlling — muszą nauczyć się je wczytywać.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Co ta migracja oznacza dla mojej firmy?</summary>
+        <div class="faq-answer"><p>Jeśli Twoja księgowość lub ERP importują dziś wyciągi MT940, w pewnym momencie trzeba będzie przełączyć się na CAMT, bo banki stopniowo wycofują stary format. To nie tylko koszt: CAMT niesie dużo więcej szczegółów o każdej operacji (pełne dane nadawcy, referencje, kody opłat), więc automatyczne księgowanie i uzgadnianie płatności staje się dokładniejsze. Pracowałem przy takich migracjach od strony banków — wiem, na co uważać od strony firmy.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Co mogę zautomatyzować, mając wyciągi w formacie CAMT?</summary>
+        <div class="faq-answer"><p>Przede wszystkim uzgadnianie płatności: system sam łączy wpłaty z wyciągu z fakturami (np. z KSeF) i pokazuje, kto zapłacił, kto zalega i komu wysłać przypomnienie — zamiast ręcznego sprawdzania banku co dwa dni. Do tego bieżący obraz przepływów: ile weszło, ile wyszło, co wisi po terminie. Połączenie danych z banku i z KSeF daje małej firmie kontrolę nad płynnością, którą kiedyś miały tylko korporacje.</p></div>
+      </details>
+    </div>
+
+    <div class="faq-group">
+      <h3 class="faq-group-title">Współpraca</h3>
+      <details class="faq-item">
+        <summary>Ile kosztuje taki projekt?</summary>
+        <div class="faq-answer"><p>To zależy od zakresu — dlatego zaczynamy od bezpłatnej konsultacji, po której dostajesz konkretną propozycję: co warto zrobić, w jakiej kolejności i ile to będzie kosztować. Małe automatyzacje to dni pracy, nie miesiące. Zasada jest prosta: nie zaczynamy, dopóki nie wiesz, za co płacisz.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Czy muszę mieć gotową specyfikację?</summary>
+        <div class="faq-answer"><p>Nie. Wystarczy, że opiszesz problem własnymi słowami — „tracimy pół dnia na przepisywanie zamówień” to w zupełności wystarczający punkt wyjścia. Zadawanie właściwych pytań i zamiana problemu na rozwiązanie techniczne to moja praca, nie Twoja.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Jak szybko zobaczę efekty?</summary>
+        <div class="faq-answer"><p>Zaczynam od najmniejszego działającego rozwiązania — prototypu albo pierwszego usprawnienia, które można ocenić w praktyce, zanim zdecydujesz o czymś większym. Dzięki temu szybko widać, czy kierunek jest dobry, a Ty nie płacisz za miesiące planowania.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Nie wiem, czy mój problem da się zautomatyzować — co wtedy?</summary>
+        <div class="faq-answer"><p>To najczęstszy punkt startu i dokładnie po to jest bezpłatna konsultacja. Opisujesz, jak wygląda praca dziś, a ja szczerze mówię, co da się zautomatyzować, co się nie opłaci i od czego zacząć. Czasem najlepsza odpowiedź brzmi „tego nie automatyzuj” — i taką też usłyszysz.</p></div>
+      </details>
+    </div>
+
+  </div>
+</div>
+
 
 <div class="problems-section">
   <div class="section-header">
@@ -292,6 +393,18 @@
     <p class="about-body">Nie sprzedaję technologii dla samej technologii. Szukam rozwiązań, które realnie oszczędzają czas, upraszczają codzienną pracę i pomagają firmie działać sprawniej. Bez korporacyjnego nadmiaru, ale z tą samą dbałością o jakość.</p>
   </div>
   <div>
+    <div class="about-photo">
+      <div class="about-photo-frame">
+        <picture>
+          <source srcset="jakub-drapala.webp" type="image/webp">
+          <img src="jakub-drapala.jpg" alt="Jakub Drapała — założyciel J-SOFT" width="200" height="250">
+        </picture>
+      </div>
+      <div class="about-photo-caption">
+        <div class="about-photo-name">Jakub Drapała</div>
+        <div class="about-photo-role">Założyciel J-SOFT · Dębica</div>
+      </div>
+    </div>
     <div class="trust-grid">
       <div class="trust-item">
         <div class="trust-num">7+</div>
@@ -310,118 +423,6 @@
         <div class="trust-label">pracujesz bezpośrednio ze mną</div>
       </div>
     </div>
-  </div>
-</div>
-
-<div class="faq-section">
-  <div class="section-header">
-    <div>
-      <div class="section-eyebrow">FAQ</div>
-      <h2 class="section-title-serif">Pytania, które słyszę <em>najczęściej</em></h2>
-    </div>
-  </div>
-  <div class="faq-groups">
-
-    <div class="faq-group">
-      <h3 class="faq-group-title">AI po ludzku</h3>
-      <details class="faq-item">
-        <summary>Czym różni się ChatGPT od AI wdrożonego w firmie?</summary>
-        <div class="faq-answer"><p>ChatGPT to ogólny asystent — odpowiada na pytania, ale nie zna Twojej firmy i nie wykona pracy w Twoich systemach. AI wdrożone w firmie jest podłączone do Twoich danych i narzędzi — skrzynki, faktur, dokumentów — i wykonuje konkretne, powtarzalne zadania według ustalonych zasad. To różnica między rozmową a działaniem.</p></div>
-      </details>
-      <details class="faq-item">
-        <summary>Do czego mała firma może realnie wykorzystać AI?</summary>
-        <div class="faq-answer"><p>Najczęściej tam, gdzie ktoś ręcznie czyta i przepisuje: odczytywanie zamówień z maili, wyciąganie danych ze skanów i PDF-ów, przygotowywanie szkiców dokumentów, odpowiedzi na powtarzalne zapytania klientów, streszczanie ofert i umów. Dobre wdrożenie zaczyna się od jednego wąskiego zadania, które zabiera najwięcej czasu — nie od „rewolucji AI”.</p></div>
-      </details>
-      <details class="faq-item">
-        <summary>Czy AI może samo wystawiać faktury albo odpisywać klientom?</summary>
-        <div class="faq-answer"><p>Może — ale nie powinno robić tego bez nadzoru. Sprawdzony model to „człowiek w pętli”: AI czyta zamówienia i przygotowuje gotowe szkice faktur czy odpowiedzi, a Ty tylko przeglądasz listę i zatwierdzasz jednym kliknięciem. Jeden błędny NIP na fakturze to realny problem podatkowy, dlatego ostatnie słowo zawsze należy do człowieka.</p></div>
-      </details>
-      <details class="faq-item">
-        <summary>Czy moje dane są bezpieczne, gdy firma korzysta z AI?</summary>
-        <div class="faq-answer"><p>To zależy od sposobu wdrożenia — i dlatego warto je zaplanować. Biznesowe usługi AI (w przeciwieństwie do darmowych czatów) dają umowy, które zakazują trenowania modeli na Twoich danych. Można też ograniczyć, co w ogóle trafia do AI: dane wrażliwe da się filtrować lub anonimizować, zanim opuszczą firmę.</p></div>
-      </details>
-      <details class="faq-item">
-        <summary>Co to jest agent AI?</summary>
-        <div class="faq-answer"><p>Program, który nie tylko odpowiada na pytania, ale sam wykonuje wieloetapowe zadania: potrafi sprawdzić skrzynkę, odczytać załącznik, zajrzeć do systemu i przygotować dokument — krok po kroku, bez prowadzenia za rękę. Ty ustalasz zasady i granice, agent wykonuje pracę i pokazuje wynik do akceptacji.</p></div>
-      </details>
-      <details class="faq-item">
-        <summary>Co to jest RAG i po co AI dostęp do moich dokumentów?</summary>
-        <div class="faq-answer"><p>RAG (Retrieval-Augmented Generation) to technika, w której AI przed udzieleniem odpowiedzi najpierw wyszukuje informacje w Twoich dokumentach — umowach, cennikach, procedurach — i odpowiada na ich podstawie, zamiast „z głowy”. Dzięki temu odpowiedzi dotyczą Twojej firmy, a nie ogólnej wiedzy z internetu, i można wskazać źródło każdej informacji. To podstawa np. firmowej bazy wiedzy dla pracowników.</p></div>
-      </details>
-    </div>
-
-    <div class="faq-group">
-      <h3 class="faq-group-title">Faktury i KSeF</h3>
-      <details class="faq-item">
-        <summary>Czym różni się faktura PDF od faktury XML?</summary>
-        <div class="faq-answer"><p>PDF to obraz faktury przeznaczony dla człowieka — komputer widzi w nim tylko „obrazek z tekstem” i żeby zaksięgować dane, ktoś musi je przepisać albo użyć zawodnego OCR. XML to faktura zapisana jako dane: każda pozycja, kwota i NIP ma swoje miejsce w strukturze, więc program księgowy odczyta ją bezbłędnie i automatycznie. Krótko: PDF czyta człowiek, XML czyta komputer.</p></div>
-      </details>
-      <details class="faq-item">
-        <summary>Co to jest faktura ustrukturyzowana?</summary>
-        <div class="faq-answer"><p>To faktura w formacie XML zgodnym ze schematem Ministerstwa Finansów, wystawiona przez KSeF. „Ustrukturyzowana” znaczy tyle, że wszystkie dane — sprzedawca, nabywca, pozycje, stawki VAT — mają ściśle określone miejsca, dzięki czemu każdy system w Polsce odczyta ją tak samo. W obowiązkowym KSeF to ona jest „prawdziwą” fakturą, a PDF czy wydruk to tylko jej wizualizacja.</p></div>
-      </details>
-      <details class="faq-item">
-        <summary>Skoro mam PDF-y, to po co mi KSeF?</summary>
-        <div class="faq-answer"><p>Bo KSeF nie jest kwestią wyboru — wystawianie faktur przez ten system jest już w Polsce obowiązkowe (dla największych firm od lutego 2026, dla pozostałych od kwietnia 2026). Faktury sprzedażowe wystawiasz w KSeF, a kosztowe odbierasz z KSeF. Ta zmiana ma też dobrą stronę: wszystkie faktury stają się danymi, które można automatycznie księgować, kontrolować i analizować.</p></div>
-      </details>
-      <details class="faq-item">
-        <summary>Od czego zacząć przygotowania firmy do KSeF?</summary>
-        <div class="faq-answer"><p>Od trzech pytań: czym dziś wystawiasz faktury (i czy dostawca ma już moduł KSeF), jak odbierasz faktury kosztowe oraz kto w firmie ma mieć uprawnienia do KSeF. Potem porządkuje się obieg: nadanie uprawnień, próby w środowisku testowym KSeF, dopiero na końcu produkcja. Zwykle nie trzeba wymieniać systemu — trzeba go rozsądnie podłączyć i przetestować.</p></div>
-      </details>
-      <details class="faq-item">
-        <summary>Co jeszcze mogą mi dać dane z KSeF poza wystawianiem faktur?</summary>
-        <div class="faq-answer"><p>Sporo, bo wszystkie faktury firmy w jednym miejscu i w formie danych to gotowy materiał do analizy: monitoring, które faktury są opłacone, a które po terminie; dashboard kosztów zamiast ręcznych zestawień w Excelu; historia cen od dostawców — łatwo sprawdzisz, czy nowa oferta nie jest zawyżona; pełna baza kontrahentów do wykorzystania np. w marketingu. Samo wystawianie faktur to obowiązek — te dane to okazja.</p></div>
-      </details>
-      <details class="faq-item">
-        <summary>Czy KSeF sam wykryje błędy i nadużycia na fakturach?</summary>
-        <div class="faq-answer"><p>Nie — KSeF sprawdza tylko, czy faktura jest technicznie poprawna, a nie czy jest zasadna i uczciwa. Ale na danych z KSeF można zbudować własne kontrole: wykrywanie zdublowanych faktur, nietypowych kwot i podejrzanych zmian cen czy sprawdzanie rachunku na białej liście VAT przed płatnością. Więcej o tym piszę w artykule <a href="blog/ksef-faktury-kosztowe-kontrole-przed-platnoscia.html">o 5 kontrolach faktur kosztowych przed płatnością</a>.</p></div>
-      </details>
-    </div>
-
-    <div class="faq-group">
-      <h3 class="faq-group-title">Płatności i standardy bankowe</h3>
-      <details class="faq-item">
-        <summary>Co to jest MT940?</summary>
-        <div class="faq-answer"><p>To format elektronicznego wyciągu bankowego używany od dekad — plik tekstowy z listą operacji, który firmy importują do systemów księgowych i finansowych. Problem w tym, że MT940 jest mocno skrótowy: ma mało miejsca na szczegóły przelewu, a każdy bank wypełnia go trochę inaczej, więc automatyczne przetwarzanie bywa zawodne.</p></div>
-      </details>
-      <details class="faq-item">
-        <summary>Co to jest ISO 20022?</summary>
-        <div class="faq-answer"><p>Międzynarodowy standard wymiany danych finansowych — wspólny „język”, w którym banki na całym świecie opisują przelewy, wyciągi i statusy płatności. Zamiast skrótowych pól tekstowych używa czytelnej struktury (XML), w której każda informacja — nadawca, odbiorca, tytuł, kwota — ma jednoznaczne miejsce. Przechodzi na niego cały świat płatności, ze SWIFT na czele, a sukcesywnie także polskie banki.</p></div>
-      </details>
-      <details class="faq-item">
-        <summary>Na czym polega migracja z MT940 na CAMT?</summary>
-        <div class="faq-answer"><p>CAMT to rodzina komunikatów ISO 20022 zastępujących stare wyciągi: camt.053 to wyciąg dzienny (następca MT940), camt.052 — raport śróddzienny, a camt.054 — powiadomienia o uznaniach i obciążeniach. Migracja oznacza, że bank zaczyna udostępniać wyciągi w nowym formacie, a systemy firmy — księgowość, ERP, controlling — muszą nauczyć się je wczytywać.</p></div>
-      </details>
-      <details class="faq-item">
-        <summary>Co ta migracja oznacza dla mojej firmy?</summary>
-        <div class="faq-answer"><p>Jeśli Twoja księgowość lub ERP importują dziś wyciągi MT940, w pewnym momencie trzeba będzie przełączyć się na CAMT, bo banki stopniowo wycofują stary format. To nie tylko koszt: CAMT niesie dużo więcej szczegółów o każdej operacji (pełne dane nadawcy, referencje, kody opłat), więc automatyczne księgowanie i uzgadnianie płatności staje się dokładniejsze. Pracowałem przy takich migracjach od strony banków — wiem, na co uważać od strony firmy.</p></div>
-      </details>
-      <details class="faq-item">
-        <summary>Co mogę zautomatyzować, mając wyciągi w formacie CAMT?</summary>
-        <div class="faq-answer"><p>Przede wszystkim uzgadnianie płatności: system sam łączy wpłaty z wyciągu z fakturami (np. z KSeF) i pokazuje, kto zapłacił, kto zalega i komu wysłać przypomnienie — zamiast ręcznego sprawdzania banku co dwa dni. Do tego bieżący obraz przepływów: ile weszło, ile wyszło, co wisi po terminie. Połączenie danych z banku i z KSeF daje małej firmie kontrolę nad płynnością, którą kiedyś miały tylko korporacje.</p></div>
-      </details>
-    </div>
-
-    <div class="faq-group">
-      <h3 class="faq-group-title">Współpraca</h3>
-      <details class="faq-item">
-        <summary>Ile kosztuje taki projekt?</summary>
-        <div class="faq-answer"><p>To zależy od zakresu — dlatego zaczynamy od bezpłatnej konsultacji, po której dostajesz konkretną propozycję: co warto zrobić, w jakiej kolejności i ile to będzie kosztować. Małe automatyzacje to dni pracy, nie miesiące. Zasada jest prosta: nie zaczynamy, dopóki nie wiesz, za co płacisz.</p></div>
-      </details>
-      <details class="faq-item">
-        <summary>Czy muszę mieć gotową specyfikację?</summary>
-        <div class="faq-answer"><p>Nie. Wystarczy, że opiszesz problem własnymi słowami — „tracimy pół dnia na przepisywanie zamówień” to w zupełności wystarczający punkt wyjścia. Zadawanie właściwych pytań i zamiana problemu na rozwiązanie techniczne to moja praca, nie Twoja.</p></div>
-      </details>
-      <details class="faq-item">
-        <summary>Jak szybko zobaczę efekty?</summary>
-        <div class="faq-answer"><p>Zaczynam od najmniejszego działającego rozwiązania — prototypu albo pierwszego usprawnienia, które można ocenić w praktyce, zanim zdecydujesz o czymś większym. Dzięki temu szybko widać, czy kierunek jest dobry, a Ty nie płacisz za miesiące planowania.</p></div>
-      </details>
-      <details class="faq-item">
-        <summary>Nie wiem, czy mój problem da się zautomatyzować — co wtedy?</summary>
-        <div class="faq-answer"><p>To najczęstszy punkt startu i dokładnie po to jest bezpłatna konsultacja. Opisujesz, jak wygląda praca dziś, a ja szczerze mówię, co da się zautomatyzować, co się nie opłaci i od czego zacząć. Czasem najlepsza odpowiedź brzmi „tego nie automatyzuj” — i taką też usłyszysz.</p></div>
-      </details>
-    </div>
-
   </div>
 </div>
 
