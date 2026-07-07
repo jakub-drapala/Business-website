@@ -25,7 +25,8 @@ stonowaną, biznesową elegancję (navy/gold/cream, Playfair + DM Sans) i pozycj
 1. **Strona w 100% działa bez JavaScriptu.** Stan „ukryty przed animacją" nadaje
    wyłącznie JS (klasa na `<html>` dodawana skryptem); bez JS nic nie jest schowane.
 2. **Stonowanie:** animacje ≤ 0,6 s, jedna krzywa easing, wyłącznie
-   `transform`/`opacity` (zero przesunięć layoutu), pełny respekt dla
+   `transform`/`opacity` (zero przesunięć layoutu; wyjątkiem są paint-only
+   przejścia hover/cienia, które layoutu nie ruszają), pełny respekt dla
    `prefers-reduced-motion` (animacje wyłączone, liczniki pokazują od razu
    wartości końcowe, werdykty demo bez animacji skanowania).
 3. **Zasada uczciwości** (docs: content-rules): dane w demo jawnie fikcyjne

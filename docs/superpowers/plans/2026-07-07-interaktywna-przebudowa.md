@@ -13,7 +13,7 @@
 ## Global Constraints
 
 - Strona w 100% działa bez JavaScriptu; stan „ukryty przed animacją" nadaje wyłącznie JS (klasa `js` na `<html>`).
-- Animacje ≤ 0,6 s, tylko `transform`/`opacity`, jedna krzywa easing; pełny respekt `prefers-reduced-motion` (animacje wyłączone, liczniki od razu z wartością końcową, werdykty demo bez opóźnień).
+- Animacje ≤ 0,6 s, tylko `transform`/`opacity`, jedna krzywa easing; pełny respekt `prefers-reduced-motion` (animacje wyłączone, liczniki od razu z wartością końcową, werdykty demo bez opóźnień). Wyjątek (decyzja Jakuba 2026-07-07): paint-only przejścia hover/cienia (np. box-shadow na nav, border/kolor) są dopuszczalne — nie przesuwają layoutu.
 - Dane w demo jawnie fikcyjne (stały dopisek), zero wywołań sieciowych z demo, symulacja białej listy opisana wprost.
 - Zero zależności, zero builda. Żadnych inline `<script>` po Task 5 (poza `application/ld+json`, którego CSP nie dotyczy).
 - Polskie cudzysłowy „…” w treściach (ASCII `"` psuje JSON-LD — patrz verify skill).
@@ -177,7 +177,7 @@ Expected: `HARNESS OK`. Serwery zostają uruchomione dla kolejnych tasków. Bez 
     var target = parseInt(m[1], 10);
     var suffix = m[2];
     var t0 = null;
-    var DUR = 900;
+    var DUR = 600;
     function frame(ts) {
       if (t0 === null) t0 = ts;
       var t = Math.min((ts - t0) / DUR, 1);
