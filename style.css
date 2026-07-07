@@ -417,6 +417,37 @@ html.js nav.nav-scrolled:not(.nav-open) { box-shadow: 0 8px 30px rgba(0,0,0,0.35
 .svc-icon { display: inline-block; transition: transform .25s ease; }
 .svc-card:hover .svc-icon { transform: translateY(-3px); }
 
+/* PROCESS — os (budowana przez JS) */
+.process-grid[hidden] { display: none; }
+.process-track { display: flex; position: relative; margin-bottom: 28px; }
+.process-track::before {
+  content: ''; position: absolute; left: 40px; right: 40px; top: 27px;
+  height: 2px; background: linear-gradient(90deg, var(--gold), var(--cream2));
+}
+.process-node {
+  position: relative; flex: 1; background: none; border: none; cursor: pointer;
+  padding: 8px 8px 0; text-align: center; font-family: 'DM Sans', sans-serif;
+}
+.process-node-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--white); border: 2px solid var(--cream2);
+  color: var(--muted); font-family: 'Playfair Display', serif; font-size: 14px;
+  position: relative; z-index: 1; transition: all .25s ease;
+}
+.process-node-name { display: block; margin-top: 10px; font-size: 14px; font-weight: 500; color: var(--muted); transition: color .25s ease; }
+.process-node:hover .process-node-num { border-color: var(--gold); color: var(--gold); }
+.process-node.is-active .process-node-num { background: var(--gold); border-color: var(--gold); color: var(--navy); }
+.process-node.is-active .process-node-name { color: var(--navy); }
+.process-node:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
+.process-panel {
+  background: var(--cream); padding: 28px 32px; max-width: 760px; margin: 0 auto;
+  transition: opacity .3s ease, transform .3s ease;
+}
+.process-panel:not(.is-shown) { opacity: 0; transform: translateY(8px); }
+.process-panel-desc { color: var(--text); font-size: 15px; line-height: 1.7; }
+.process-panel-more { color: var(--muted); font-size: 14px; line-height: 1.8; font-weight: 300; margin-top: 10px; }
+
 @media (max-width: 900px) {
   .hero { grid-template-columns: 1fr; }
   .hero-right { display: none; }
@@ -453,4 +484,8 @@ html.js nav.nav-scrolled:not(.nav-open) { box-shadow: 0 8px 30px rgba(0,0,0,0.35
   .faq-groups { grid-template-columns: 1fr; gap: 40px; }
   .process-grid { grid-template-columns: 1fr 1fr; }
   .audience-grid { grid-template-columns: 1fr; gap: 32px; }
+  .process-track { flex-direction: column; align-items: stretch; gap: 4px; }
+  .process-track::before { left: 27px; right: auto; top: 10px; bottom: 10px; width: 2px; height: auto; background: linear-gradient(180deg, var(--gold), var(--cream2)); }
+  .process-node { display: flex; align-items: center; gap: 14px; text-align: left; padding: 6px 8px; }
+  .process-node-name { margin-top: 0; }
 }

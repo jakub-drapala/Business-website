@@ -78,7 +78,70 @@
     requestAnimationFrame(frame);
   }
 
+  /* --- Interaktywna os procesu --- */
+  function initProcess() {
+    var grid = document.querySelector('.process-grid');
+    if (!grid) return false;
+    var steps = Array.prototype.slice.call(grid.querySelectorAll('.process-step'));
+    if (steps.length < 2) return false;
+
+    var track = document.createElement('div');
+    track.className = 'process-track';
+    var panel = document.createElement('div');
+    panel.className = 'process-panel';
+
+    var nodes = steps.map(function (step, i) {
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'process-node';
+      btn.innerHTML =
+        '<span class="process-node-num">' + step.querySelector('.process-num').textContent + '</span>' +
+        '<span class="process-node-name">' + step.querySelector('.process-name').textContent + '</span>';
+      btn.setAttribute('aria-expanded', 'false');
+      btn.addEventListener('click', function () { activate(i, false); });
+      track.appendChild(btn);
+      return btn;
+    });
+
+    track.addEventListener('keydown', function (e) {
+      var current = nodes.indexOf(document.activeElement);
+      if (current === -1) return;
+      var next = e.key === 'ArrowRight' ? current + 1 : (e.key === 'ArrowLeft' ? current - 1 : null);
+      if (next === null || !nodes[next]) return;
+      e.preventDefault();
+      nodes[next].focus();
+      activate(next, false);
+    });
+
+    function activate(i, instant) {
+      nodes.forEach(function (n, j) {
+        n.classList.toggle('is-active', j === i);
+        n.setAttribute('aria-expanded', String(j === i));
+      });
+      var desc = steps[i].querySelector('.process-desc');
+      var more = steps[i].querySelector('.process-more');
+      var html = '<p class="process-panel-desc">' + desc.innerHTML + '</p>' +
+                 (more ? '<p class="process-panel-more">' + more.innerHTML + '</p>' : '');
+      if (!instant && !reduceMotion) {
+        panel.classList.remove('is-shown');
+        panel.innerHTML = html;
+        void panel.offsetWidth;
+        panel.classList.add('is-shown');
+      } else {
+        panel.innerHTML = html;
+        panel.classList.add('is-shown');
+      }
+    }
+
+    grid.hidden = true;
+    grid.parentElement.insertBefore(track, grid);
+    grid.parentElement.insertBefore(panel, grid);
+    activate(0, true);
+    return true;
+  }
+
   /* === INIT === */
-  initReveal('');
+  var hasTimeline = initProcess();
+  initReveal(hasTimeline ? '.process-track, .process-panel' : '.process-step');
   initCounters();
 })();
