@@ -392,6 +392,31 @@ footer p:last-child { width: 100%; text-align: right; }
 .faq-answer { padding: 0 32px 20px 0; color: var(--muted); font-size: 14px; line-height: 1.8; font-weight: 300; }
 .faq-answer a { color: var(--gold); }
 
+/* ENHANCE — style aktywne tylko z JS (progressive enhancement) */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity .5s ease, transform .5s ease;
+  transition-delay: var(--reveal-delay, 0s);
+}
+.reveal.is-visible { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
+nav { transition: box-shadow .25s ease; }
+html.js nav.nav-scrolled:not(.nav-open) { box-shadow: 0 8px 30px rgba(0,0,0,0.35); }
+.nav-links a { position: relative; }
+.nav-links a::after {
+  content: ''; position: absolute; left: 0; bottom: -4px;
+  width: 100%; height: 1px; background: var(--gold-light);
+  transform: scaleX(0); transform-origin: left; transition: transform .25s ease;
+}
+.nav-links a:hover::after, .nav-links a.active::after { transform: scaleX(1); }
+.btn-gold .arr { display: inline-block; transition: transform .25s ease; }
+.btn-gold:hover .arr { transform: translateX(4px); }
+.svc-icon { display: inline-block; transition: transform .25s ease; }
+.svc-card:hover .svc-icon { transform: translateY(-3px); }
+
 @media (max-width: 900px) {
   .hero { grid-template-columns: 1fr; }
   .hero-right { display: none; }
