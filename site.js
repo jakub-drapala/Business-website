@@ -140,8 +140,98 @@
     return true;
   }
 
+  /* --- Filtr FAQ --- */
+  function normalize(s) {
+    return Array.prototype.map.call(s, function (c) {
+      var lower = c.toLowerCase();
+      if (lower === 'ł') return 'l'; /* ł nie rozkłada się w NFD */
+      return lower.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    }).join('');
+  }
+  function escapeHtml(s) {
+    return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+
+  function initFaqFilter() {
+    var groupsWrap = document.querySelector('.faq-groups');
+    if (!groupsWrap) return;
+    var groups = Array.prototype.slice.call(groupsWrap.querySelectorAll('.faq-group'));
+    var items = Array.prototype.slice.call(groupsWrap.querySelectorAll('.faq-item')).map(function (details) {
+      var summary = details.querySelector('summary');
+      return {
+        details: details,
+        summary: summary,
+        originalSummary: summary.innerHTML,
+        summaryText: summary.textContent,
+        norm: normalize(summary.textContent + ' ' + details.querySelector('.faq-answer').textContent)
+      };
+    });
+
+    var bar = document.createElement('div');
+    bar.className = 'faq-search';
+    bar.innerHTML =
+      '<input type="search" id="faq-filter" autocomplete="off"' +
+      ' placeholder="Filtruj pytania — np. KSeF, RAG, koszty…"' +
+      ' aria-label="Filtruj pytania FAQ">' +
+      '<p class="faq-count" aria-live="polite"></p>';
+    groupsWrap.parentElement.insertBefore(bar, groupsWrap);
+
+    var empty = document.createElement('p');
+    empty.className = 'faq-empty';
+    empty.hidden = true;
+    empty.innerHTML = 'Nie ma takiego pytania — <a href="kontakt.html">zadaj je mi bezpośrednio</a>.';
+    groupsWrap.parentElement.insertBefore(empty, groupsWrap.nextSibling);
+
+    var input = bar.querySelector('#faq-filter');
+    var count = bar.querySelector('.faq-count');
+    var timer = null;
+    input.addEventListener('input', function () {
+      clearTimeout(timer);
+      timer = setTimeout(function () { apply(input.value); }, 120);
+    });
+
+    function apply(raw) {
+      var q = normalize(raw.trim());
+      var visible = 0;
+      items.forEach(function (item) {
+        var hit = q === '' || item.norm.indexOf(q) !== -1;
+        item.details.hidden = !hit;
+        if (hit) visible++;
+        highlight(item, q);
+      });
+      groups.forEach(function (group) {
+        group.hidden = group.querySelectorAll('.faq-item:not([hidden])').length === 0;
+      });
+      if (q === '') {
+        count.textContent = '';
+        empty.hidden = true;
+        return;
+      }
+      count.textContent = 'Pokazuję ' + visible + ' z ' + items.length + ' pytań';
+      empty.hidden = visible !== 0;
+      if (visible > 0 && visible <= 3) {
+        items.forEach(function (item) {
+          if (!item.details.hidden) item.details.open = true;
+        });
+      }
+    }
+
+    /* normalize() mapuje znak-na-znak (1:1), wiec indeksy w tekscie
+       znormalizowanym odpowiadaja oryginalowi */
+    function highlight(item, q) {
+      if (q === '') { item.summary.innerHTML = item.originalSummary; return; }
+      var idx = normalize(item.summaryText).indexOf(q);
+      if (idx === -1) { item.summary.innerHTML = item.originalSummary; return; }
+      var t = item.summaryText;
+      item.summary.innerHTML =
+        escapeHtml(t.slice(0, idx)) + '<mark>' + escapeHtml(t.slice(idx, idx + q.length)) + '</mark>' +
+        escapeHtml(t.slice(idx + q.length));
+    }
+  }
+
   /* === INIT === */
   var hasTimeline = initProcess();
   initReveal(hasTimeline ? '.process-track, .process-panel' : '.process-step');
   initCounters();
+  initFaqFilter();
 })();
