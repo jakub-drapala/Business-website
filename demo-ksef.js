@@ -47,7 +47,7 @@
         for (var i = 0; i < INVOICE.pozycjeNetto.length; i++) netto += INVOICE.pozycjeNetto[i];
         var ok = netto === INVOICE.netto && netto + INVOICE.vat === INVOICE.brutto;
         return { ok: ok, msg: ok
-          ? 'Suma pozycji (14 400,00) + VAT (3 312,00) = kwota do zapłaty. Rachunek się zgadza.'
+          ? 'Suma pozycji (14 400,00) + VAT (3 312,00) = kwota do zapłaty. Suma się zgadza.'
           : 'Suma pozycji nie zgadza się z kwotą do zapłaty — wyjaśnij przed księgowaniem.' };
       } },
     { id: 'nip', field: 'nip', run: function () {

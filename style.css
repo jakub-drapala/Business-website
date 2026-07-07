@@ -402,6 +402,7 @@ footer p:last-child { width: 100%; text-align: right; }
 .reveal.is-visible { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
+  .nav-links a::after, .btn-gold .arr, .svc-icon { transition: none; }
 }
 nav { transition: box-shadow .25s ease; }
 html.js nav.nav-scrolled:not(.nav-open) { box-shadow: 0 8px 30px rgba(0,0,0,0.35); }

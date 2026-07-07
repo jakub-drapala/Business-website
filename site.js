@@ -179,7 +179,7 @@
     var empty = document.createElement('p');
     empty.className = 'faq-empty';
     empty.hidden = true;
-    empty.innerHTML = 'Nie ma takiego pytania — <a href="kontakt.html">zadaj je mi bezpośrednio</a>.';
+    empty.innerHTML = 'Nie ma takiego pytania — <a href="kontakt.html">zadaj mi je bezpośrednio</a>.';
     groupsWrap.parentElement.insertBefore(empty, groupsWrap.nextSibling);
 
     var input = bar.querySelector('#faq-filter');
