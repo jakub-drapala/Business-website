@@ -24,10 +24,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="apple-touch-icon" sizes="192x192" href="/favicon-192.png">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=2">
 <script src="site.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<script>emailjs.init('ZOBwl7GMNRPwk_VRu');</script>
+<script src="kontakt.js" defer></script>
 </head>
 <body>
 
@@ -96,22 +96,6 @@
       </div>
       <button type="submit" id="submit-btn" class="btn-gold" style="border: none; font-family: 'DM Sans', sans-serif; cursor: pointer; text-align: center;">Wyślij wiadomość →</button>
     </form>
-    <script>
-      document.getElementById('contact-form').addEventListener('submit', function(e) {
-        e.preventDefault();
-        const btn = document.getElementById('submit-btn');
-        btn.textContent = 'Wysyłanie...';
-        btn.disabled = true;
-        emailjs.sendForm('service_3ae2jx4', 'template_tkwp64l', this)
-          .then(function() {
-            btn.textContent = 'Wysłano! ✓';
-          }, function(error) {
-            btn.textContent = 'Błąd — spróbuj ponownie';
-            btn.disabled = false;
-            console.error('EmailJS error:', error);
-          });
-      });
-    </script>
   </div>
 </div>
 
