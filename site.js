@@ -223,9 +223,13 @@
       var idx = normalize(item.summaryText).indexOf(q);
       if (idx === -1) { item.summary.innerHTML = item.originalSummary; return; }
       var t = item.summaryText;
+      /* jeden <span> jako pojedynczy element flex — summary ma display:flex
+         z justify-content:space-between, wiec bez opakowania kazdy fragment
+         tekstu (przed/po <mark>) staje sie osobnym elementem flex i space-between
+         rozsuwa je po calej szerokosci (zle odstepy wokol podswietlenia). */
       item.summary.innerHTML =
-        escapeHtml(t.slice(0, idx)) + '<mark>' + escapeHtml(t.slice(idx, idx + q.length)) + '</mark>' +
-        escapeHtml(t.slice(idx + q.length));
+        '<span>' + escapeHtml(t.slice(0, idx)) + '<mark>' + escapeHtml(t.slice(idx, idx + q.length)) + '</mark>' +
+        escapeHtml(t.slice(idx + q.length)) + '</span>';
     }
   }
 
