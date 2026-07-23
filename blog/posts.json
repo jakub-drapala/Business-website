@@ -4,5 +4,11 @@
     "title": "KSeF i faktury kosztowe: 5 kontroli przed płatnością",
     "description": "KSeF zmienia obieg faktur kosztowych. Zobacz, jak procesowo sprawdzać XML, PDF, kwotę do zapłaty, NIP i status VAT przed płatnością w firmie.",
     "date": "2026-07-06"
+  },
+  {
+    "slug": "ksef-faktury-korygujace-kontrola-procesu",
+    "title": "KSeF i faktury korygujące: jak opanować wyjątki w procesie",
+    "description": "Faktura korygująca w KSeF wymaga nie tylko odbioru dokumentu. Zobacz, jak uporządkować powiązania, kontrolę danych i wyjątki przed księgowaniem.",
+    "date": "2026-07-23"
   }
 ]

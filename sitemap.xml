@@ -27,7 +27,7 @@
   </url>
   <url>
     <loc>https://j-soft.me/blog/</loc>
-    <lastmod>2026-07-06</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
@@ -39,5 +39,10 @@
     <loc>https://j-soft.me/demo-ksef.html</loc>
     <lastmod>2026-07-07</lastmod>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://j-soft.me/blog/ksef-faktury-korygujace-kontrola-procesu.html</loc>
+    <lastmod>2026-07-23</lastmod>
+    <priority>0.5</priority>
   </url>
 </urlset>
