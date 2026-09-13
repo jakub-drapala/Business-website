@@ -28,5 +28,11 @@
     "title": "Mapa użycia AI w firmie: od narzędzi do kontroli procesu",
     "description": "Jak uporządkować użycie AI w małej firmie: narzędzia, dane, właściciele, komunikaty i akceptacja człowieka w jednym prostym procesie pracy firmy.",
     "date": "2026-08-31"
+  },
+  {
+    "slug": "testy-niezawodnosci-workflow-ai",
+    "title": "Testy niezawodności workflow AI: co sprawdzić przed startem",
+    "description": "Jak sprawdzić workflow AI przed użyciem w firmie: testy błędów, ponowienia, uprawnień i akceptacji człowieka, bez budowania demo, które tylko wygląda dobrze.",
+    "date": "2026-09-13"
   }
 ]
