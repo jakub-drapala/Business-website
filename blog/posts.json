@@ -34,5 +34,11 @@
     "title": "Testy niezawodności workflow AI: co sprawdzić przed startem",
     "description": "Jak sprawdzić workflow AI przed użyciem w firmie: testy błędów, ponowienia, uprawnień i akceptacji człowieka, bez budowania demo, które tylko wygląda dobrze.",
     "date": "2026-09-13"
+  },
+  {
+    "slug": "ai-ulatwia-budowanie-kto-utrzyma",
+    "title": "AI ułatwia budowanie. Kto utrzyma to wszystko w działaniu?",
+    "description": "Firmy budują z AI szybciej, niż uczą się nad tym panować. Sprawdzam, czy rosnący koszt utrzymania poprawi pozycję doświadczonych programistów w Polsce.",
+    "date": "2026-09-22"
   }
 ]
