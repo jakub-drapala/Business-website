@@ -17,35 +17,37 @@
 <meta name="twitter:title" content="Blog · J-SOFT Jakub Drapała">
 <meta name="twitter:description" content="Praktycznie o automatyzacji procesów, KSeF i AI w firmach.">
 <meta name="twitter:image" content="https://j-soft.me/j-soft-gradient.jpeg">
-<meta name="theme-color" content="#0a1628">
+<meta name="theme-color" content="#101f32">
 <title>Blog · Automatyzacja, KSeF, AI w praktyce | J-SOFT</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="apple-touch-icon" sizes="192x192" href="/favicon-192.png">
-<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/style.css?v=4">
 <style>
-.blog-list { max-width: 760px; margin: 0 auto; padding: 48px 24px 80px; display: grid; gap: 24px; }
-.blog-item { display: block; background: var(--cream); border-left: 3px solid var(--gold); padding: 28px 32px; text-decoration: none; }
-.blog-item-date { color: var(--muted); font-size: 12px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; }
-.blog-item h2 { color: var(--navy); font-size: 22px; margin: 0 0 10px; }
+.blog-list { max-width: 900px; margin: 0 auto; padding: 56px 22px 72px; display: grid; gap: 20px; }
+.blog-item { display: block; background: var(--cream); border: 1px solid var(--cream2); border-radius: var(--radius); padding: 28px; text-decoration: none; transition: border-color .2s, transform .2s; }
+.blog-item-date { color: var(--gold); font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 12px; }
+.blog-item h2 { color: var(--navy); font-size: 22px; font-weight: 500; line-height: 1.4; letter-spacing: -.4px; margin: 0 0 12px; }
+.blog-item:hover { border-color: #c5b594; transform: translateY(-2px); }
 .blog-item:hover h2 { color: var(--gold); }
 .blog-item p { color: var(--text); font-size: 15px; line-height: 1.6; margin: 0; }
 </style>
+<script src="/site.js?v=4" defer></script>
 </head>
 <body>
 
 <nav>
   <a href="/index.html" class="logo">J-SOFT<span> Jakub Drapała</span></a>
-  <div class="nav-links">
+  <div class="nav-links" id="navigation-links">
     <a href="/uslugi.html">Usługi</a>
     <a href="/doswiadczenie.html">Doświadczenie</a>
     <a href="/kontakt.html">Kontakt</a>
     <a href="/blog/" class="active">Blog</a>
   </div>
-  <a href="/kontakt.html" class="nav-cta">Konsultacja</a>
-  <button class="hamburger" onclick="document.querySelector('nav').classList.toggle('nav-open')" aria-label="Menu">
+  <a href="/kontakt.html" class="nav-cta">Opisz proces</a>
+  <button class="hamburger" type="button" aria-label="Otwórz menu" aria-controls="navigation-links" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
 </nav>
@@ -101,12 +103,12 @@
     <h2 class="cta-title">Masz podobny problem<br>w swojej firmie?<br><em>Porozmawiajmy.</em></h2>
     <div class="cta-sub">Opowiedz mi o swoim procesie — razem znajdziemy rozwiązanie.</div>
   </div>
-  <a href="/kontakt.html" class="btn-gold">Bezpłatna konsultacja →</a>
+  <a href="/kontakt.html" class="btn-gold">Opisz, jak to wygląda u Ciebie <span aria-hidden="true">↗</span></a>
 </div>
 
 <footer>
   <a href="/index.html" class="footer-logo">J-SOFT<span> Jakub Drapała</span></a>
-  <p>© 2026 · Usługi IT dla firm · Automatyzacja · AI · Aplikacje · Integracje</p>
+  <p>© 2026 · J-SOFT · Faktury · Płatności · Rozrachunki</p>
   <p>Dębica · Podkarpackie · cała Polska zdalnie</p>
 </footer>
 

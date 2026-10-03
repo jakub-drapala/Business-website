@@ -10,8 +10,30 @@
   var nav = document.querySelector('nav');
   var burger = document.querySelector('.hamburger');
   if (nav && burger) {
+    function closeMenu() {
+      nav.classList.remove('nav-open');
+      burger.setAttribute('aria-expanded', 'false');
+      burger.setAttribute('aria-label', 'Otwórz menu');
+    }
     burger.addEventListener('click', function () {
-      nav.classList.toggle('nav-open');
+      var open = nav.classList.toggle('nav-open');
+      burger.setAttribute('aria-expanded', String(open));
+      burger.setAttribute('aria-label', open ? 'Zamknij menu' : 'Otwórz menu');
+    });
+    nav.addEventListener('click', function (event) {
+      if (event.target.closest('a')) closeMenu();
+    });
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && nav.classList.contains('nav-open')) {
+        closeMenu();
+        burger.focus();
+      }
+    });
+    document.addEventListener('click', function (event) {
+      if (!nav.contains(event.target)) closeMenu();
+    });
+    window.matchMedia('(min-width: 701px)').addEventListener('change', function (event) {
+      if (event.matches) closeMenu();
     });
   }
 
@@ -48,35 +70,7 @@
     targets.forEach(function (el) { io.observe(el); });
   }
 
-  /* --- Liczniki trust-grid --- */
-  function initCounters() {
-    var nums = document.querySelectorAll('.trust-num');
-    if (reduceMotion || !('IntersectionObserver' in window) || !nums.length) return;
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (!entry.isIntersecting) return;
-        io.unobserve(entry.target);
-        animateCount(entry.target);
-      });
-    }, { threshold: 0.6 });
-    Array.prototype.forEach.call(nums, function (el) { io.observe(el); });
-  }
-  function animateCount(el) {
-    var m = el.textContent.trim().match(/^(\d+)([\s\S]*)$/);
-    if (!m) return;
-    var target = parseInt(m[1], 10);
-    var suffix = m[2];
-    var t0 = null;
-    var DUR = 600;
-    function frame(ts) {
-      if (t0 === null) t0 = ts;
-      var t = Math.min((ts - t0) / DUR, 1);
-      var eased = 1 - Math.pow(1 - t, 3);
-      el.textContent = Math.round(eased * target) + suffix;
-      if (t < 1) requestAnimationFrame(frame);
-    }
-    requestAnimationFrame(frame);
-  }
+  /* Wartości doświadczenia pozostają stałe także podczas przewijania. */
 
   /* --- Interaktywna os procesu --- */
   function initProcess() {
@@ -236,6 +230,5 @@
   /* === INIT === */
   var hasTimeline = initProcess();
   initReveal(hasTimeline ? '.process-track, .process-panel' : '.process-step');
-  initCounters();
   initFaqFilter();
 })();
