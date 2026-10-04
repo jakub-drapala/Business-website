@@ -22,7 +22,7 @@
   </url>
   <url>
     <loc>https://j-soft.me/blog/</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2026-10-04</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
@@ -63,6 +63,11 @@
   <url>
     <loc>https://j-soft.me/blog/ai-ulatwia-budowanie-kto-utrzyma.html</loc>
     <lastmod>2026-09-22</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://j-soft.me/blog/nierozliczone-wplaty-5-przyczyn.html</loc>
+    <lastmod>2026-10-04</lastmod>
     <priority>0.5</priority>
   </url>
 </urlset>
